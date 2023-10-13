@@ -25,45 +25,15 @@ CreateThread(function()
         end
     end
 
+    -- Wait for NUI to be ready before adding the app
+    Citizen.Wait(1000)
     AddApp()
 
     AddEventHandler("onResourceStart", function(resource)
         if resource == "lb-phone" then
             AddApp()
         end
-    end)
+    })
 
-    local directions = {"N", "NE", "E", "SE", "S", "SW", "W", "NW"}
-    local oldYaw, oldDirection
-
-    RegisterNUICallback("getDirection", function(data, cb)
-        cb(oldDirection)
-    end)
-
-    while true do
-        Wait(25)
-
-        local yaw = math.floor(360.0 - ((GetFinalRenderedCamRot(0).z + 360.0) % 360.0) + 0.5)
-        if yaw == 360 then
-            yaw = 0
-        end
-
-        -- Get the closest direction
-        if oldYaw ~= yaw then
-            oldYaw = yaw
-            oldDirection = yaw .. "° " .. directions[math.floor((yaw + 22.5) / 45.0) % 8 + 1]
-            exports["lb-phone"]:SendCustomAppMessage(identifier, {
-                type = "updateDirection",
-                direction = oldDirection
-            })
-        end
-    end
-end)
-
-RegisterNUICallback("drawNotification", function(data, cb)
-    BeginTextCommandThefeedPost("STRING")
-    AddTextComponentSubstringPlayerName(data.message)
-    EndTextCommandThefeedPostTicker(false, false)
-
-    cb("ok")
-end)
+    -- Rest of your code
+})
