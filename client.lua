@@ -28,12 +28,10 @@ CreateThread(function()
     -- Wait for NUI to be ready before adding the app
     Citizen.Wait(1000)
     AddApp()
+end) -- Closing parenthesis for CreateThread
 
-    AddEventHandler("onResourceStart", function(resource)
-        if resource == "lb-phone" then
-            AddApp()
-        end
-    )
-
-    -- Rest of your code
-)
+AddEventHandler("onResourceStart", function(resource)
+    if resource == "lb-phone" then
+        AddApp()
+    end
+end) -- Closing parenthesis for AddEventHandler

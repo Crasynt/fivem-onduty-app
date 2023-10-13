@@ -1,7 +1,5 @@
--- HTML file path
 local htmlFile = "ui.html"
 
--- Function to open the UI
 function OpenUI()
     local playerPed = PlayerId()
     local playerName = GetPlayerName(playerPed)
@@ -16,7 +14,6 @@ function OpenUI()
     SetNuiFocus(true, true)
 end
 
--- Function to close the UI
 function CloseUI()
     SendNUIMessage({
         closeUi = true
@@ -25,41 +22,20 @@ function CloseUI()
     SetNuiFocus(false, false)
 end
 
--- Bind the function to the "Escape" key - Thanks Chatgpt for this, couldn't be bothered ahaha
 Citizen.CreateThread(function()
     while true do
-        Citizen.Wait(0) -- Adjust the delay as needed
+        Citizen.Wait(0)
 
-        if IsControlJustReleased(0, 177) then -- 177 corresponds to the "Escape" key
+        if IsControlJustReleased(0, 177) then
             CloseUI()
         end
     end
 end)
 
-
--- Register a command handler for each button
-RegisterCommand("10-3", function()
-    TriggerEvent("chatMessage", "10-3", {255, 0, 0}, "On Duty.")
-end, false)
-
-RegisterCommand("10-2", function()
-    TriggerEvent("chatMessage", "10-2", {255, 0, 0}, "Enroute to Job.")
-end, false)
-
-RegisterCommand("10-7", function()
-    TriggerEvent("chatMessage", "10-7", {255, 0, 0}, "Arrived at Job.")
-end, false)
-
-RegisterCommand("10-0", function()
-    TriggerEvent("chatMessage", "10-0", {255, 0, 0}, "Off Duty.")
-end, false)
-
--- Open the UI when a specific command is executed
 RegisterCommand("openui", function()
     OpenUI()
 end, false)
 
--- Close the UI when a specific command is executed
 RegisterCommand("closeui", function()
     CloseUI()
 end, false)
