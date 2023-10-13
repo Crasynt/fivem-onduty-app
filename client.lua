@@ -10,3 +10,12 @@ local function AddApp()
         ui = GetCurrentResourceName() .. "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4U8s2RN2Ia9mLKtzTzbAZJQgLSjxgA9LOyw&usqp=CAU", -- Icon Image
         icon = "https://cfx-nui-" .. GetCurrentResourceName() .. "/ui/assets/icon.png"
     
+    })
+
+    if not added then
+        print("Error adding the custom app: " .. errorMessage)
+    end
+end
+
+-- Call the function to add the custom app
+AddApp()
