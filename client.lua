@@ -1,6 +1,6 @@
 local identifier = "FiveM-Onduty-App"
 
-CreateThread(function (functions.js)
+CreateThread(function()
     while GetResourceState("lb-phone") ~= "started" do
         Wait(500)
     end
@@ -8,13 +8,15 @@ CreateThread(function (functions.js)
     local function AddApp()
         local added, errorMessage = exports["lb-phone"]:AddCustomApp({
             identifier = identifier,
-            name = "FiveM-Onduty-Appt",
+            name = "FiveM-Onduty-App",
             description = "Police Onduty App",
             developer = "Crasy",
-            defaultApp = true, -- Not needed to be downloaded,
-            size = 59812, -- OPTIONAL in kb
-            images = {"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4U8s2RN2Ia9mLKtzTzbAZJQgLSjxgA9LOyw&usqp=CAU"}, -- Icon Image
-            ui = GetCurrentResourceName() .. "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4U8s2RN2Ia9mLKtzTzbAZJQgLSjxgA9LOyw&usqp=CAU", -- Icon Image
+            defaultApp = true,
+            size = 59812,
+            images = {
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4U8s2RN2Ia9mLKtzTzbAZJQgLSjxgA9LOyw&usqp=CAU" -- Icon Image
+            },
+            ui = GetCurrentResourceName() .. "html/app.html", -- Assuming the HTML file is in your resource directory
             icon = "https://cfx-nui-" .. GetCurrentResourceName() .. "/ui/assets/icon.png"
         })
 
@@ -46,7 +48,7 @@ CreateThread(function (functions.js)
             yaw = 0
         end
 
-        -- get closest direction
+        -- Get the closest direction
         if oldYaw ~= yaw then
             oldYaw = yaw
             oldDirection = yaw .. "° " .. directions[math.floor((yaw + 22.5) / 45.0) % 8 + 1]
