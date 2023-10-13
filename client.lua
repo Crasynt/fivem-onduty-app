@@ -33,7 +33,7 @@ CreateThread(function()
         if resource == "lb-phone" then
             AddApp()
         end
-    })
+    )
 
     -- Rest of your code
-})
+)
