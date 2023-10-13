@@ -25,6 +25,18 @@ function CloseUI()
     SetNuiFocus(false, false)
 end
 
+-- Bind the function to the "Escape" key - Thanks Chatgpt for this, couldn't be bothered ahaha
+Citizen.CreateThread(function()
+    while true do
+        Citizen.Wait(0) -- Adjust the delay as needed
+
+        if IsControlJustReleased(0, 177) then -- 177 corresponds to the "Escape" key
+            CloseUI()
+        end
+    end
+end)
+
+
 -- Register a command handler for each button
 RegisterCommand("10-3", function()
     TriggerEvent("chatMessage", "10-3", {255, 0, 0}, "On Duty.")
