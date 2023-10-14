@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .button {
+            padding: 10px;
+            margin: 5px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s; /* Add a smooth transition effect */
+        }
+
+        .button:hover {
+            background-color: #0056b3; /* Change the background color on hover */
+        }
+    </style>
+    <script>
+        function OpenUI() {
+            // JavaScript code to open the UI
+            // You can add more functionality here, e.g., showing elements
+            document.getElementById('ui-container').style.display = 'block';
+        }
+
+        function CloseUI() {
+            // JavaScript code to close the UI
+            // You can add more functionality here, e.g., hiding elements
+            document.getElementById('ui-container').style.display = 'none';
+        }
+
+        function sendChatCommand(command) {
+            // JavaScript code to send a chat command
+            // You can use a WebSocket or NUI message to send the command to the server
+            // Replace the code below with the appropriate method to send commands
+            fetch('/your-chat-command-endpoint', {
+                method: 'POST',
+                body: JSON.stringify({ command }),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+        }
+
+        // Additional imported functions go here
+    </script>
+</head>
+<body>
+    <!-- Container for UI elements -->
+    <div id="ui-container" style="display: none;">
+        <button class="button" id="btn-103">10-3</button>
+        <button class "button" id="btn-102">10-2</button>
+        <button class="button" id="btn-107">10-7</button>
+        <button class="button" id="btn-100">10-0</button>
+    </div>
+
+    <!-- Example button to open the UI -->
+    <button onclick="OpenUI()">Open UI</button>
+
+    <!-- Example button to close the UI -->
+    <button onclick="CloseUI()">Close UI</button>
+
+    <!-- Example buttons for sending commands -->
+    <button onclick="sendChatCommand('/10-3')">10-3</button>
+    <button onclick="sendChatCommand('/10-2')">10-2</button>
+    <button onclick="sendChatCommand('/10-7')">10-7</button>
+    <button onclick="sendChatCommand('/10-0')">10-0</button>
+</body>
+</html>
