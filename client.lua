@@ -1,4 +1,4 @@
-local identifier = "FiveM-Onduty-App"
+local identifier = "Onduty-App"
 
 CreateThread(function()
     while GetResourceState("lb-phone") ~= "started" do
@@ -8,8 +8,8 @@ CreateThread(function()
     local function AddApp()
         local added, errorMessage = exports["lb-phone"]:AddCustomApp({
             identifier = identifier,
-            name = "FiveM-Onduty-App",
-            description = "Police Onduty App",
+            name = "Onduty-App",
+            description = "New Zealand Police Onduty App",
             developer = "Crasy",
             defaultApp = true,
             size = 59812,
