@@ -13,5 +13,6 @@ client_scripts {
 
 -- Add any additional files that need to be included in the resource package
 files {
-    'ui.html'
+    'ui.html',
+    'ui/assets/Icon.png'
 }
