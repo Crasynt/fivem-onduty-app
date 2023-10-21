@@ -12,7 +12,7 @@ function sendChatCommand(command) {
     // Replace the endpoint with your actual server endpoint.
     fetch('/your-chat-command-endpoint', {
         method: 'POST',
-        body: JSON.stringify({ command }),
+        body: JSON.stringify({command}),
         headers: {
             'Content-Type': 'application/json'
         }

@@ -1,4 +1,4 @@
-local identifier = "Onduty-App"
+local identifier = "Onduty"
 
 CreateThread(function()
     while GetResourceState("lb-phone") ~= "started" do
@@ -8,16 +8,16 @@ CreateThread(function()
     local function AddApp()
         local added, errorMessage = exports["lb-phone"]:AddCustomApp({
             identifier = identifier,
-            name = "Onduty-App",
-            description = "New Zealand Police Onduty App",
-            developer = "Crasy",
+            name = "Onduty",
+            description = "Onduty App",
+            developer = "Crasy & Politeblock07",
             defaultApp = true,
             size = 59812,
             images = {
                 "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4U8s2RN2Ia9mLKtzTzbAZJQgLSjxgA9LOyw&usqp=CAU" -- Icon Image
             },
-            ui = GetCurrentResourceName() .. "html/app.html", -- Assuming the HTML file is in your resource directory
-            icon = "https://cfx-nui-" .. GetCurrentResourceName() .. "/ui/assets/icon.png"
+            ui = GetCurrentResourceName() .. "html/ui.html", -- Assuming the HTML file is in your resource directory
+            icon = "https://cfx-nui-" .. GetCurrentResourceName() .. "/ui/assets/NZP.png"
         })
 
         if not added then
