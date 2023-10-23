@@ -2,7 +2,7 @@ fx_version 'cerulean'
 game 'gta5'
 
 -- Specify the common information for your resource collection
-author 'Politeblock07'
+author 'Crasy & Politeblock07'
 description 'LB Phone Police Application'
 version '1.0'
 
