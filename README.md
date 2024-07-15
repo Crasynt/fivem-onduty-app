@@ -4,7 +4,7 @@ This resource provides the LB Phone Police Application for FiveM.
 
 ## Installation
 1. Ensure you have all the required files: `Client.lua`, `script.js`, `ui.html`, `Ui.lua`.
-2. Add the following files to your resource:
+2. Ensure you have all the following
    - `Client.lua`
    - `script.js`
    - `ui.html`
