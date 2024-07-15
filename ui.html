@@ -17,23 +17,15 @@
         }
     </style>
     <script>
-        function OpenUI() {
-            // JavaScript code to open the UI
-            // You can add more functionality here, e.g., showing elements
+        function openUI() {
             document.getElementById('ui-container').style.display = 'block';
         }
 
-        function CloseUI() {
-            // JavaScript code to close the UI
-            // You can add more functionality here, e.g., hiding elements
+        function closeUI() {
             document.getElementById('ui-container').style.display = 'none';
         }
 
         function sendChatCommand(command) {
-            // JavaScript code to send a chat command
-            // You can use a WebSocket or NUI message to send the command to the server
-            // Replace the code below with the appropriate method to send commands
-            // For example, you can use Fetch API to send a command via a POST request
             fetch('/your-chat-command-endpoint', {
                 method: 'POST',
                 body: JSON.stringify({ command }),
@@ -54,10 +46,10 @@
     </div>
 
     <!-- Example button to open the UI -->
-    <button onclick="OpenUI()">Open UI</button>
+    <button onclick="openUI()">Open UI</button>
 
     <!-- Example button to close the UI -->
-    <button onclick="CloseUI()">Close UI</button>
+    <button onclick="closeUI()">Close UI</button>
 
     <!-- Example buttons for sending commands -->
     <button onclick="sendChatCommand('/10-3')">10-3</button>
