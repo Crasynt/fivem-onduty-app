@@ -1,7 +1,7 @@
 fx_version 'cerulean'
 game 'gta5'
 
-author 'Crasy & Politeblock07'
+author 'Crasy'
 description 'LB Phone Police Application'
 version '1.0'
 
