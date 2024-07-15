@@ -21,4 +21,4 @@ This resource provides the LB Phone Police Application for FiveM.
 - Crasy
 
 ## Version
-- 1.0
+- 14.0
