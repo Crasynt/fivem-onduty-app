@@ -18,7 +18,7 @@ This resource provides the LB Phone Police Application for FiveM.
 - The `Ui.lua` file contains UI-related functions.
 
 ## Author
-- Crasy
+- Crasy, PoliteBlock07, Xqn
 
 ## Version
 - 14.0
