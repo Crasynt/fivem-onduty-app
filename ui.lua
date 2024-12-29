@@ -1,7 +1,7 @@
 function OpenUI()
     local playerPed = PlayerId()
     local playerName = GetPlayerName(playerPed)
-    local iframe = '<iframe src="file://' .. "ui.html" .. '" style="width:100%; height:100%; position: absolute; top:0; left:0; border:0;"></iframe>'
+    local iframe = '<iframe src="nui://' .. GetCurrentResourceName() .. '/ui.html" style="width:100%; height:100%; position: absolute; top:0; left:0; border:0;"></iframe>'
     
     SendNUIMessage({
         openUi = true,
@@ -37,3 +37,8 @@ end, false)
 RegisterCommand("closeui", function()
     CloseUI()
 end, false)
+
+RegisterNUICallback('closeUI', function(data, cb)
+    CloseUI()
+    cb('ok')
+end)

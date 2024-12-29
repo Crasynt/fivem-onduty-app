@@ -6,13 +6,11 @@ description 'LB Phone Police Application'
 version '1.0'
 
 client_scripts {
-    'Client.lua'
+    'client.lua',
+    'ui.lua'
 }
 
 files {
-    'Client.lua',
     'script.js',
-    'ui.html',
-    'Ui.lua',
-    'fxmanifest.lua'
+    'ui.html'
 }
