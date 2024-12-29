@@ -16,7 +16,7 @@ CreateThread(function()
             images = {
                 "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4U8s2RN2Ia9mLKtzTzbAZJQgLSjxgA9LOyw&usqp=CAU" -- Icon Image
             },
-            ui = GetCurrentResourceName() .. "html/ui.html", -- Assuming the HTML file is in your resource directory
+            ui = "nui://" .. GetCurrentResourceName() .. "/ui.html", -- Corrected HTML file path
             icon = "https://cfx-nui-" .. GetCurrentResourceName() .. "/ui/assets/NZP.png"
         })
 
@@ -35,3 +35,9 @@ AddEventHandler("onResourceStart", function(resource)
         AddApp()
     end
 end) -- Closing parenthesis for AddEventHandler
+
+RegisterNUICallback('chatCommand', function(data, cb)
+    local command = data.command
+    -- Implement your logic to handle chat commands here
+    cb('ok')
+end)
